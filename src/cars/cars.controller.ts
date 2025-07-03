@@ -23,7 +23,10 @@ export class CarsController {
         return body;
     }
     @Patch(':id')
-    updateCar (@Body() body: any) {
+    updateCar (
+        @Param('id', ParseIntPipe) id: number,
+        @Body() body: any)
+    {
         return body;
     }
     @Delete(':id')
