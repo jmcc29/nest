@@ -6,23 +6,17 @@ export class CarsService {
         {
             id: 1,
             make: 'Toyota',
-            model: 'Corolla',
-            year: 2020,
-            price: 20000
+            model: 'Corolla'
         },
         {
             id: 2,
             make: 'Honda',
-            model: 'Civic',
-            year: 2021,
-            price: 22000
+            model: 'Civic'
         },
         {
             id: 3,
             make: 'Ford',
-            model: 'Focus',
-            year: 2019,
-            price: 18000
+            model: 'Focus'
         }
     ];
     findAll() {
@@ -30,9 +24,8 @@ export class CarsService {
     }
     findOneById(id: number) {
         const car = this.cars.find(car => car.id === id);
-        if (!car) {
+        if (!car) 
             throw new NotFoundException(`Car with ID ${id} not found`);
-        }
         return car;
     }
 }
